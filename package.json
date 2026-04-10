@@ -1,0 +1,114 @@
+{
+	"name": "dont-fold-the-comments",
+	"displayName": "Don't Fold The Comments",
+	"description": "Folds all code blocks while keeping block-style docblock comments (/** */ and /* */) unfolded.",
+	"version": "0.1.0",
+	"publisher": "josiahroot",
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "dontFoldTheDocs.run",
+				"title": "Fold All But Comments"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel2",
+				"title": "Fold All But Comments to Level 2"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel3",
+				"title": "Fold All But Comments to Level 3"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel4",
+				"title": "Fold All But Comments to Level 4"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel5",
+				"title": "Fold All But Comments to Level 5"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel6",
+				"title": "Fold All But Comments to Level 6"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel7",
+				"title": "Fold All But Comments to Level 7"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "dontFoldTheDocs.run",
+				"key": "ctrl+k ctrl+/",
+				"mac": "cmd+k cmd+/",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel2",
+				"key": "ctrl+k ctrl+2",
+				"mac": "cmd+k cmd+2",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel3",
+				"key": "ctrl+k ctrl+3",
+				"mac": "cmd+k cmd+3",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel4",
+				"key": "ctrl+k ctrl+4",
+				"mac": "cmd+k cmd+4",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel5",
+				"key": "ctrl+k ctrl+5",
+				"mac": "cmd+k cmd+5",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel6",
+				"key": "ctrl+k ctrl+6",
+				"mac": "cmd+k cmd+6",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "dontFoldTheDocs.foldLevel7",
+				"key": "ctrl+k ctrl+7",
+				"mac": "cmd+k cmd+7",
+				"when": "editorTextFocus"
+			}
+		],
+		"configuration": {
+			"title": "Fold All But Comments",
+			"properties": {
+				"dontFoldTheDocs.defaultFoldLevel": {
+					"type": "number",
+					"default": 2,
+					"minimum": 2,
+					"maximum": 7,
+					"description": "The fold level used by the base Don't Fold The Docs command. Corresponds to VS Code's fold level (2-7)."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.75.0",
+		"@types/node": "^18.0.0",
+		"typescript": "^5.0.0"
+	}
+}
